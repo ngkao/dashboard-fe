@@ -146,7 +146,7 @@ const Sidebar = (
                             {navItems.map(({text, icon}) => {
                                 if (!icon) {
                                     return (
-                                        <Typography key={text} sx={{m: "0.5rem 0 0.5rem 3rem"}}>
+                                        <Typography key={text} sx={{m: "1rem 0 0.5rem 3rem"}}>
                                             {text}
                                         </Typography>
                                     )
@@ -162,7 +162,7 @@ const Sidebar = (
                                             sx={{
                                                 backgroundColor: active === lcText ? theme.palette.secondary[300] : "transparent",
                                                 color: active === lcText ? theme.palette.primary[600] : theme.palette.secondary[100],
-                                                padding: "4px"
+                                                padding: "3px"
                                             }}
                                         >
                                             <ListItemIcon
