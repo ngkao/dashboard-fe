@@ -43,7 +43,7 @@ const OverviewChart = ({ isDashboard = false, view }) => {
 
         return [ [totalSalesLine], [totalUnitsLine] ]
     }, [data]); // eslint-disable-line react-hooks/exhaustive-deps
-console.log("totalSalesLine",totalSalesLine)
+
     if (!data || isLoading) return "Loading...";
     return (
         <ResponsiveLine
@@ -92,6 +92,7 @@ console.log("totalSalesLine",totalSalesLine)
         }}
         yFormat=" >-.2f"
         curve="catmullRom"
+        enableArea={isDashboard}
         axisTop={null}
         axisRight={null}
         axisBottom={{
@@ -108,6 +109,7 @@ console.log("totalSalesLine",totalSalesLine)
         }}
         axisLeft={{
             tickSize: 5,
+            tickValues: 5,
             tickPadding: 5,
             tickRotation: 0,
             legend: isDashboard ? "" : `Total ${view === "sales" ? "Revenue" : "Units"} for Year`,
